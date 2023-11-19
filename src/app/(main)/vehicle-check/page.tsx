@@ -8,14 +8,14 @@ const page = async () => {
     page_number: 1,
     page_size: 200,
   };
-  const brandData = await GetStaticDatasNotSSRAPI({
-    endPoint: "/BrandModelType/Get/All",
-    data: postedData,
-    method: "post",
-  });
+  // const brandData = await GetStaticDatasNotSSRAPI({
+  //   endPoint: "/BrandModelType/Get/All",
+  //   data: postedData,
+  //   method: "post",
+  // });
   return (
     <div>
-      <VehicleCheck cars={brandData} />
+      <VehicleCheck />
     </div>
   );
 };
