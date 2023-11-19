@@ -25,7 +25,8 @@ export default async function AdvancedSearchPage() {
     page_size: 200,
   };
 
-  const brandData = postData(postedData);
+  const brandData = await postData(postedData);
+  console.log(brandData);
 
   return (
     <AdvancedSearch colors={colors} models={brandData?.brandModelTypes ?? []} />
