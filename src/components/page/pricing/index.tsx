@@ -16,14 +16,12 @@ const Pricing = ({ brandModel }: any) => {
 
   return (
     <>
-      Test
       {/* @@@___________________ Pricing Banner ___________________@@@ */}
-      {/* <BannerPricing brandModel={brandModel} />
-
+      <BannerPricing brandModel={brandModel} />
       {/* @@@___________________ Why pricing with OtoKhodro ___________________@@@ */}
-      {/* <BannerWhyPricing /> */}
+      <BannerWhyPricing />
       {/* @@@___________________ Effective reason banner ___________________@@@ */}
-      {/* <BannerEffectiveReason /> */}
+      <BannerEffectiveReason />
     </>
   );
 };
