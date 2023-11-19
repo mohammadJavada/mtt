@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useAppSelector } from "src/hooks/redux-hooks";
 import Stepper from "./components/stepper";
 import StepOne from "./components/stepper/step-one";
 import StepTwo from "./components/stepper/step-two";
 import StepThree from "./components/stepper/step-three";
 
-const PricingSteps =  ({ brandModel }: any) => {
+const PricingSteps = ({ brandModel }: any) => {
   const { tab } = useAppSelector((state) => state.pricing);
   return (
     <>
@@ -36,10 +36,10 @@ const PricingSteps =  ({ brandModel }: any) => {
         {tab == 1 && <StepOne brandModel={brandModel} />}
 
         {/* Stepper Two */}
-        {tab == 2 && <StepTwo />}
+        {/* {tab == 2 && <StepTwo />} */}
 
         {/* Stepper Three */}
-        {tab == 3 && <StepThree />}
+        {/* {tab == 3 && <StepThree />} */}
       </div>
     </>
   );

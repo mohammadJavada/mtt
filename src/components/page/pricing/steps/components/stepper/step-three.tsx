@@ -1,3 +1,4 @@
+"use client";
 import CardSelectedCarInfo from "./card-selected-car-info";
 import ChartPrice from "./chart-price";
 
