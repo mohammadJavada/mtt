@@ -5,7 +5,7 @@ import PricingSteps from "@/page/pricing/steps";
 async function postData(url = "", data = {}) {
   const response = await fetch(url, {
     method: "POST",
-    cache: "no-store",
+    // cache: "no-store",
     headers: {
       "Content-Type": "application/json",
     },
