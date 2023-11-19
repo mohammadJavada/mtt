@@ -33,8 +33,7 @@ const PricingStepPage = async () => {
   //     cache: "no-store",
   //   });
   // };
-  // return <PricingSteps brandModel={data?.brandModelTypes || []} />;
-  return <div>test</div>;
+  return <PricingSteps brandModel={data?.brandModelTypes || []} />;
 };
 
 export default PricingStepPage;
