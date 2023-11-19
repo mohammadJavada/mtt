@@ -10,9 +10,9 @@ import BannerEffectiveReason from "./components/banner-effective-reason";
 const Pricing = ({ brandModel }: any) => {
   const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   dispatch(REMOVE_CAR_INFO());
-  // }, []);
+  useEffect(() => {
+    dispatch(REMOVE_CAR_INFO());
+  }, []);
 
   return (
     <>
