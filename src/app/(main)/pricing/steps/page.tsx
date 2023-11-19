@@ -1,6 +1,5 @@
 import GetStaticDatasAPI from "@/apis/static-datas/get-static-data.api";
 import PricingSteps from "@/page/pricing/steps";
-import React from "react";
 
 const PricingStepPage = async () => {
   let postedData = {
