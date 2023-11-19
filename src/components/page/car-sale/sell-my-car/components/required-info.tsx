@@ -36,7 +36,6 @@ const RequiredInfo = ({
   const dispatch = useDispatch();
 
   const customHandleChange = (e, index, category, brandOfCar, model, type) => {
-
     let formikValue = formik.values;
     formik.setValues({
       ...formikValue,
@@ -85,14 +84,16 @@ const RequiredInfo = ({
                   ? formik.values.type
                   : formik.values.model
                   ? formik.values.model
-                  : <span className="text-gray-200">انتخاب کنید.</span>
+                  : "انتخاب کنید."
               }
             />
-            {formik.errors.brand && formik.touched.brand && (
-              <span className="text-red-500 text-xs">
-                {formik.errors.brand}
-              </span>
-            )}
+            {formik.errors.brand &&
+              formik.touched.brand &&
+              formik.values.brand == "" && (
+                <span className="text-red-500 text-xs">
+                  {formik.errors.brand}
+                </span>
+              )}
           </div>
         )}
 

@@ -53,6 +53,23 @@ export function getPermissions() {
         "OperationsDirector",
       ],
     },
+
+
+    {
+      value: "درخواست‌های خرید ویژه من",
+      icon: <TableDocument size="18" color="#FFF" variant="TwoTone" />,
+      href: `/panel/${roles[0]}/orders/vip`,
+      permission: [
+        "User",
+        "SuperAdmin",
+        "CallCenterExpert",
+        "TechnicalCarBodyExpert",
+        "SalesExpert",
+        "Exhibitors",
+        "OperationsDirector",
+      ],
+    },
+    
     // {
     //   value: "آگهی‌های من",
     //   icon: <TableDocument size="18" color="#FFF" variant="TwoTone" />,
@@ -82,6 +99,12 @@ export function getPermissions() {
       permission: ["OperationsDirector"],
     },
     {
+      value: "درخواست‌های ثبت‌شده خرید ویژه",
+      icon: <DocumentText size="18" color="#FFF" variant="TwoTone" />,
+      href: "/panel/admin/car-order/vip",
+      permission: ["OperationsDirector"],
+    },
+    {
       value: "درخواست‌های ثبت‌شده فروش عادی",
       icon: <DocumentText size="18" color="#FFF" variant="TwoTone" />,
       href: "/panel/admin/car-sale/normal",
@@ -94,15 +117,15 @@ export function getPermissions() {
       permission: ["OperationsDirector"],
     },
     {
-      value: "قیمت‌گذاری",
-      icon: <DocumentText size="18" color="#FFF" variant="TwoTone" />,
-      href: "/panel/admin/car-pricing",
-      permission: ["OperationsDirector"],
-    },
-    {
       value: "درخواست های خرید اقساطی",
       icon: <DocumentText size="18" color="#FFF" variant="TwoTone" />,
       href: "/panel/admin/exhibitor/leasing/customers-req",
+      permission: ["OperationsDirector"],
+    },
+    {
+      value: "قیمت‌گذاری",
+      icon: <DocumentText size="18" color="#FFF" variant="TwoTone" />,
+      href: "/panel/admin/car-pricing",
       permission: ["OperationsDirector"],
     },
     {

@@ -13,7 +13,7 @@ export default function NormalPurchase() {
   return (
     <div className="bg-gray-150 p-10 rounded flex flex-col justify-start relative">
       <Link
-        href="/car-order/new/products"
+        href="/car-order/used/products"
         className="bg-white text-blue border border-blue-200 px-24 py-2 rounded font-medium ml-auto flex items-center gap-2"
       >
         خرید عادی

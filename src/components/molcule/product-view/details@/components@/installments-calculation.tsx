@@ -28,7 +28,7 @@ const InstallmentCalculation = () => {
   const nextFormHandler = () => {
     if (!userInfo.phone_number) {
      
-      router.push("/login/check");
+      router.push("/auth/check");
     } else {
       httpService
         .get(`${AUTH_URL}/Auth/User/${userInfo.phone_number}`)

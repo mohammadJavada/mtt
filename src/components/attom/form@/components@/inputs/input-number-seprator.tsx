@@ -19,7 +19,7 @@ export const InputNumberSeprator = ({
   classNames,
   defaultValue,
   hint,
-}) => {
+}:any) => {
   const [value, setValue] = useState({
     formattedValue: formik.values[name]
       ?.toString()

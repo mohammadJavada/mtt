@@ -87,13 +87,13 @@ const PricingCard = ({ brandModel }: any) => {
               defaultValue={type != "" ? type : model}
             />
             {brand_model_error && (
-              <span className="absolute text-red-500 text-xs -bottom-5">
+              <span className="absolute mt-2 text-red-500 text-xs -bottom-5">
                 انتخاب برند و مدل الزامی است.
               </span>
             )}
           </div>
 
-          <div>
+          <div className="mt-3">
             <SelectYear
             name={"year_of_manufacture"}
             defaultValue={year_of_manufacture}

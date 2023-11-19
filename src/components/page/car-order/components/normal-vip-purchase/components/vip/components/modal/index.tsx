@@ -21,9 +21,9 @@ import { VipBuyModalFormInitialValues } from "./form/init-value";
 import { VipBuyModalFormValidationSchema } from "./form/validation-schema";
 import { PostAdBuyVip } from "@/apis/ad-buy";
 import { useRequest } from "@/hooks/useRequest";
+import { InputNumberSeprator } from "@/attom/form@/components@/inputs/input-number-seprator";
 
-export default function VipBuyModal({brandModel}:any) {
-  
+export default function VipBuyModal({ brandModel }: any) {
   const { userInfo } = useAppSelector(authSelector);
   const { vipCarBuy } = useAppSelector(brandModelSelector);
   const router = useRouter();
@@ -37,8 +37,6 @@ export default function VipBuyModal({brandModel}:any) {
       setOpen(true);
     }
   };
-
-
 
   const [open, setOpen] = useState(false);
 
@@ -98,7 +96,7 @@ export default function VipBuyModal({brandModel}:any) {
 
   useEffect(() => {
     dispatch(SET_IS_MULTIPLE(false));
-  }, []);  
+  }, []);
 
   return (
     <div className="flex justify-center">
@@ -161,14 +159,13 @@ export default function VipBuyModal({brandModel}:any) {
                   type="tel"
                 />
 
-                <FormInput
+                <InputNumberSeprator
                   formik={formik}
                   label="بودجه مد نظر"
                   name="budget"
                   placeholder="1000000"
                   showEndAdorMent={true}
-                  // classNames="text-left"
-                  showEndAdorMentValue="ریال"
+                  showEndAdorMentValue="تومان"
                 />
 
                 <div className="grid grid-cols-2 gap-4">

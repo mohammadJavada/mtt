@@ -46,7 +46,7 @@ const SellerDetails = ({ productData }) => {
     let userInfoLength = Object.entries(userInfo);
 
     if (userInfoLength.length == 0) {
-      router.push("/login/check");
+      router.push("/auth/check");
     } else {
       let data = new FormData();
       data.append("type", "adSale");

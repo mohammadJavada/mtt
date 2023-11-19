@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import { useAppDispatch, useAppSelector } from "src/hooks/redux-hooks";
 import { StatusType } from "./type";
+import { ConvertAPIImagesToBase64 } from "@/utils/get-images-base64-api";
 
 const SearchCard = ({ brandModelTypes }: any) => {
   const dataFilter = useAppSelector(filterSelector);
@@ -27,7 +28,7 @@ const SearchCard = ({ brandModelTypes }: any) => {
 
   let check = false;
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setStatus({ loading: true, error: false });
     let data = {
       brands: dataFilter?.brand?.join(",") ?? -1,
@@ -65,17 +66,24 @@ const SearchCard = ({ brandModelTypes }: any) => {
       ascending: dataFilter.ascending,
     };
 
-    PostAdSaleSearch(data)
-      .then((res) => {
-        dispatch(PREVIEW_DATA(res));
-        dispatch(SET_SHOW_NULL(false));
-        if (res == null) {
-          dispatch(SET_SHOW_NULL(true));
-        }
-        setStatus({ ...status, loading: false });
-        router.push("/car-order/list/products");
-      })
-      .catch(() => setStatus({ loading: true, error: false }));
+    try {
+      const tempSearch = await PostAdSaleSearch(data);
+
+      if (tempSearch == null) {
+        dispatch(SET_SHOW_NULL(true));
+      }
+
+      await ConvertAPIImagesToBase64(tempSearch);
+
+      dispatch(PREVIEW_DATA(tempSearch));
+      dispatch(SET_SHOW_NULL(false));
+
+      setStatus({ ...status, loading: false });
+      router.push("/car-order/list/products");
+
+    } catch (error: any) {
+      setStatus({ loading: true, error: false });
+    }
   };
 
   useEffect(() => {
