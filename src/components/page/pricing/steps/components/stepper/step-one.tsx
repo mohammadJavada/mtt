@@ -1,3 +1,4 @@
+"use client";
 import {
   ADD_CAR_MODEL_INFO,
   ADD_ERROR_FOR_BRANDMODEL,
