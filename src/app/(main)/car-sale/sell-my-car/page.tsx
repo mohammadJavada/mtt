@@ -1,4 +1,5 @@
 import GetStaticDatasAPI from "@/apis/static-datas/get-static-data.api";
+import GetStaticDatasNotSSRAPI from "@/apis/static-datas/get-static-datas-not-ssr.api";
 import dynamic from "next/dynamic";
 
 const SellMyCar = dynamic(() => import("@/page/car-sale/sell-my-car"), {
@@ -10,7 +11,7 @@ export default async function CarsaleSellMyCarPage() {
     page_number: 1,
     page_size: 200,
   };
-  const data = await GetStaticDatasAPI({
+  const brandData = await GetStaticDatasNotSSRAPI({
     endPoint: "/BrandModelType/Get/All",
     data: postedData,
     method: "post",
@@ -22,5 +23,5 @@ export default async function CarsaleSellMyCarPage() {
     endPoint: "/Color/Get/All",
   });
 
-  return <SellMyCar cars={data} cities={cities} colors={colors} />;
+  return <SellMyCar cars={brandData} cities={cities} colors={colors} />;
 }

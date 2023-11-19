@@ -1,17 +1,16 @@
 import { GetCarsListAPi } from "@/apis/cars-list";
 import GetStaticDataAPI from "@/apis/static-datas/get-static-data.api";
 import GetStaticDatasAPI from "@/apis/static-datas/get-static-data.api";
+import GetStaticDatasNotSSRAPI from "@/apis/static-datas/get-static-datas-not-ssr.api";
 import UsedProductListPage from "@/page/car-order/used/products/page";
 import { ConvertAPIImagesToBase64 } from "@/utils/get-images-base64-api";
 
 export default async function Product() {
-
   const data = await GetCarsListAPi("Used");
   await ConvertAPIImagesToBase64(data?.ads);
 
   let pagedata = { page_number: 1, page_size: 100 };
-
-  const brandData = await GetStaticDatasAPI({
+  const brandData = await GetStaticDatasNotSSRAPI({
     endPoint: "/BrandModelType/Get/All",
     data: pagedata,
     method: "post",
@@ -20,7 +19,7 @@ export default async function Product() {
   const { colors } = await GetStaticDataAPI({
     endPoint: "/Color/Get/All",
   });
-  
+
   const { cities } = await GetStaticDataAPI({
     endPoint: "/City/Get/All",
   });

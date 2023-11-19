@@ -1,4 +1,5 @@
 import GetStaticDatasAPI from "@/apis/static-datas/get-static-data.api";
+import GetStaticDatasNotSSRAPI from "@/apis/static-datas/get-static-datas-not-ssr.api";
 import AdvancedSearch from "@/page/advanced-search";
 
 export default async function AdvancedSearchPage() {
@@ -11,12 +12,12 @@ export default async function AdvancedSearchPage() {
     page_size: 200,
   };
 
-  const data = await GetStaticDatasAPI({
+  const brandData = await GetStaticDatasNotSSRAPI({
     endPoint: "/BrandModelType/Get/All",
     data: postedData,
     method: "post",
   });
   return (
-    <AdvancedSearch colors={colors} models={data?.brandModelTypes ?? []} />
+    <AdvancedSearch colors={colors} models={brandData?.brandModelTypes ?? []} />
   );
 }

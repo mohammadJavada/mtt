@@ -1,4 +1,4 @@
-import GetStaticDatasAPI from "@/apis/static-datas/get-static-data.api";
+import GetStaticDatasNotSSRAPI from "@/apis/static-datas/get-static-datas-not-ssr.api";
 import Home from "@/page/home@";
 
 const HomePage = async () => {
@@ -7,13 +7,13 @@ const HomePage = async () => {
     page_size: 200,
   };
 
-  const data = await GetStaticDatasAPI({
+  const brandData = await GetStaticDatasNotSSRAPI({
     endPoint: "/BrandModelType/Get/All",
     data: postedData,
     method: "post",
   });
 
-  return <Home brandModelTypes={data?.brandModelTypes ?? []} />;
+  return <Home brandModelTypes={brandData?.brandModelTypes ?? []} />;
 };
 
 export default HomePage;
