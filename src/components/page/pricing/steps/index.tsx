@@ -36,10 +36,10 @@ const PricingSteps = ({ brandModel }: any) => {
         {tab == 1 && <StepOne brandModel={brandModel} />}
 
         {/* Stepper Two */}
-        {/* {tab == 2 && <StepTwo />} */}
+        {tab == 2 && <StepTwo />}
 
         {/* Stepper Three */}
-        {/* {tab == 3 && <StepThree />} */}
+        {tab == 3 && <StepThree />}
       </div>
     </>
   );
